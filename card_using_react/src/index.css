@@ -1,0 +1,99 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+html.body{
+  width:100%;
+  height: 100%;
+}
+
+.parents{
+  min-height: 100vh;
+  width: 100%;
+  background-color: #111;
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.card{
+  height:250px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card .top{
+  display:flex ;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top img{
+  height: 45px;
+  width: 45px;
+  border: 3px solid #dadada;
+  border-radius: 50px;
+  padding: 1px;
+}
+.top button{
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 3px solid #dadada;
+  border-radius: 5px;
+  gap: 3px;
+  background-color: transparent;
+}
+
+.center h3{
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.center h3 span{
+  font-size: 14px;
+  font-weight: 400;
+  color: #7d7c7c;
+  
+}
+.center h1{
+  font-size: 22px;
+  font-weight: 600;
+}
+.center .tags{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.center .tags h4{
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #dadada;
+  padding: 3px 4px;
+  border-radius: 10px;
+}
+.bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #dadada;
+  padding: 10px 5px;
+}
+.bottom button{
+ height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 3px solid #dadada;
+  border-radius: 5px;
+  gap: 3px;
+  background-color: #333;
+  padding: 5px;
+  color: #fff;
+}
