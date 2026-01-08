@@ -1,0 +1,12 @@
+.value{
+  width: fit-content;
+  padding: 20px;
+  font-size: 3x-large;
+  border-radius: 10px;
+  background-color: #858383;
+}
+.count button{
+  padding: 20px;
+  background-color: beige;
+  margin: 20px;
+}
