@@ -72,20 +72,20 @@ const App = () => {
             return (
               <div
                 key={idx}
-                className="h-50 relative m-10 w-45 rounded-2xl  text-black bg-cover bg-amber-50  "
+                className="h-50 relative flex flex-col items-start justify-between m-10 w-45 rounded-2xl  text-black bg-cover bg-amber-50  "
               >
-                <h1
+                <h2 className="font-bold text-center m-3 text-xl">
+                  {element.title}
+                </h2>
+                <p className="m-3 leading-tight text-lg ">{element.detailed}</p>
+                <button
                   onClick={() => {
                     deleteme(idx);
                   }}
-                  className="absolute top-3 right-3 rounded-2xl bg-red-400 "
+                  className="w-40 cursor-pointer rounded active:scale-95 p-1 m-3 bg-red-500"
                 >
-                  <X />
-                </h1>
-                <h2 className="font-bold text-center top-5 text-xl">
-                  {element.title}
-                </h2>
-                <p className="p-3">{element.detailed}</p>
+                  Delete
+                </button>
               </div>
             );
           })}
