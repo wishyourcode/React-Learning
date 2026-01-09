@@ -16,7 +16,7 @@ const App = () => {
   };
   const deleteme = (idx) => {
     const copyTask = [...Task];
-    copyTask.slice(idx, 1);
+    copyTask.splice(idx, 1);
     setTask(copyTask);
   };
 
