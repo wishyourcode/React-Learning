@@ -16,7 +16,7 @@ html.body{
   gap: 30px;
   flex-wrap: wrap;
 }
-.card{
+.card{ 
   height:250px;
   width: 300px;
   background-color: #fff;
