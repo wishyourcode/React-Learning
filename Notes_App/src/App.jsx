@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { X } from "lucide-react";
 const App = () => {
   const [title, settitle] = useState("");
   const [detailed, setdetailed] = useState("");
@@ -13,6 +14,12 @@ const App = () => {
     copyTask.push({ title, detailed });
     setTask(copyTask);
   };
+  const deleteme = (idx) => {
+    const copyTask = [...Task];
+    copyTask.slice(idx, 1);
+    setTask(copyTask);
+  };
+
   return (
     <div className="bg-black text-white">
       <h1 className="w-full bg-amber-900 text-center text-5xl p-5 text-white">
@@ -65,12 +72,20 @@ const App = () => {
             return (
               <div
                 key={idx}
-                className="h-50 m-10 w-45 rounded-2xl text-black bg-cover bg-amber-50  "
+                className="h-50 relative m-10 w-45 rounded-2xl  text-black bg-cover bg-amber-50  "
               >
-                <h2 className="font-bold text-center py-1.5">
+                <h1
+                  onClick={() => {
+                    deleteme(idx);
+                  }}
+                  className="absolute top-3 right-3 rounded-2xl bg-red-400 "
+                >
+                  <X />
+                </h1>
+                <h2 className="font-bold text-center top-5 text-xl">
                   {element.title}
                 </h2>
-                <p className="px-2">{element.detailed}</p>
+                <p className="p-3">{element.detailed}</p>
               </div>
             );
           })}
