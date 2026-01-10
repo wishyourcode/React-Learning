@@ -1,0 +1,16 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.Apicalling{
+    width:100%;
+    background-color: bisque;
+    /* padding: 10px; */
+}
+.Apicalling button{
+    background-color: brown;
+    padding: 10px;
+    margin: 10px;
+    color: aliceblue;
+    border-radius: 10px;
+}
