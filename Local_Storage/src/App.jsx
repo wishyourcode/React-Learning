@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  localStorage.setItem("user", "vishal");
+  localStorage.setItem("user2", "piyush");
+  localStorage.setItem("age", 23);
+  const user = localStorage.getItem("user");
+  const age = localStorage.getItem("age");
+  localStorage.removeItem("user2");
+  const userdetails = {
+    username: "Vishal Mishra",
+    age: 23,
+    city: "UP",
+  };
+  localStorage.setItem("userdetails", JSON.stringify(userdetails));
 
+  const userdetail = JSON.parse(localStorage.getItem("userdetails"));
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      Radhe Radhe
+      <h1>{user}</h1>
+      <h2>{age}</h2>
+      <h1>{userdetail.username}</h1>
+      <h1>{userdetail.age}</h1>
+      <h1>{userdetail.city}</h1>
+    </div>
+  );
+};
 
-export default App
+export default App;
