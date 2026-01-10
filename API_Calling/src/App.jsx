@@ -1,6 +1,7 @@
 import React from "react";
 
 const App = () => {
+  //using fetch method
   const getData = async () => {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/todos/1"
@@ -16,5 +17,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
