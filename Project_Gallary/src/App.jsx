@@ -8,6 +8,7 @@ const App = () => {
     );
     setUserData(response.data);
   };
+  //automatically called useEffect
   useEffect(function () {
     getdata();
   }, []);
