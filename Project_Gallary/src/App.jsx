@@ -1,5 +1,6 @@
 import axios from "axios";
 import { use, useEffect, useState } from "react";
+import Card from "./components/Card";
 const App = () => {
   const [UserData, setUserData] = useState([]);
   const [Index, setIndex] = useState(2);
@@ -17,23 +18,17 @@ const App = () => {
     [Index]
   );
 
-  let printUserData = "No Picture Available";
+  let printUserData = (
+    <h2 className="text-gray-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      Loading .....
+    </h2>
+  );
   if (UserData.length > 0) {
     printUserData = UserData.map(function (element, idx) {
       return (
-        <a href={element.url} target="_blank">
-          <div>
-            <div className="h-50 w-50 bg-amber-300 overflow-hidden rounded-2xl">
-              <img
-                key={idx}
-                className="h-[85%] w-full object-center"
-                src={element.download_url}
-                alt=""
-              />
-              <h2 className="text-center">Author: {element.author}</h2>
-            </div>
-          </div>
-        </a>
+        <div>
+          <Card element={element} idx={idx} />;
+        </div>
       );
     });
   }
@@ -49,6 +44,7 @@ const App = () => {
           onClick={() => {
             if (Index > 1) {
               setIndex(Index - 1);
+              setUserData([]);
             }
           }}
           className="bg-amber-950 cursor-pointer active:scale-90 px-4 py-2 rounded gap-3"
@@ -59,6 +55,7 @@ const App = () => {
         <button
           onClick={() => {
             setIndex(Index + 1);
+            setUserData([]);
           }}
           className="bg-amber-950 cursor-pointer active:scale-90 px-4 py-2 rounded gap-3"
         >
